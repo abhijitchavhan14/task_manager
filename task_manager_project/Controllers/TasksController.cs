@@ -70,6 +70,7 @@ namespace task_manager_project.Controllers
 
         public IActionResult Delete(int id)
         {
+
             var task = _context.Tasks.Find(id);
             return View(task);
         }

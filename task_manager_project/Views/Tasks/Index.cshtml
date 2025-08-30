@@ -85,7 +85,7 @@
                     <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@task.Id">Delete</a>
                     @if (task.Status != "Completed")
                     {
-                        <a class="btn btn-sm btn-success" asp-action="MarkComplete" asp-route-id="@task.Id">Complete</a>
+                        <a class="btn btn-sm btn-success" asp-action="MarkComplete" asp-route-id="@task.Id">Done</a>
                     }
                 </td>
             </tr>
