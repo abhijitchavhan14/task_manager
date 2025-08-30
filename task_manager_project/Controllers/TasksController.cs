@@ -13,10 +13,25 @@ namespace task_manager_project.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string status)
         {
-            return View(_context.Tasks.ToList());
+            var tasks = _context.Tasks.AsQueryable();
+
+            if (!string.IsNullOrEmpty(status) && status != "All")
+            {
+                tasks = tasks.Where(t => t.Status == status);
+            }
+
+            var taskList = tasks.ToList();
+
+            ViewBag.TotalTasks = _context.Tasks.Count();
+            ViewBag.CompletedTasks = _context.Tasks.Count(t => t.Status == "Completed");
+            ViewBag.PendingTasks = _context.Tasks.Count(t => t.Status == "Pending");
+            ViewBag.CurrentFilter = status ?? "All"; // store selected filter
+
+            return View(taskList);
         }
+
 
         public IActionResult Create()
         {
