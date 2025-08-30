@@ -1,12 +1,103 @@
 /* Center the form nicely */
+body {
+    /*background-color: #f0f2f5; /* light gray */
+    background-color: #b5c3c5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Container styling for Home and Task pages */
+    .home-container {
+    width: 90%;
+    min-height: 80vh; /* 80% of viewport height */
+    margin: 2rem auto; /* center horizontally */
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Navbar styling */
+/* Navbar Styling */
+.navbar {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    top: 0;
+    z-index: 1000;
+}
+
+    .navbar .container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+.navbar-brand {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 15px;
+}
+
+    .navbar-links .nav-link {
+        color: #ecf0f1;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+        .navbar-links .nav-link:hover {
+            color: #f39c12;
+        }
+
+/* Align toggle button to right-most side */
+.navbar-actions {
+    margin-left: auto;
+}
+
+.btn-toggle {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.light-mode {
+    background-color: #f5f6fa;
+    color: #333;
+}
+
+
+
 /* General container */
 .task-container {
-    max-width: 700px;
+    max-width: 80%;
     margin: 20px auto;
     padding: 20px;
     background: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
     /* Form labels */
@@ -39,40 +130,40 @@
         }
 
 .task-form {
-    max-width: 500px;
+    max-width: 80%;
     margin: 40px auto;
     padding: 20px;
-    background: #fff;
+    background: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
     /* Labels */
-    .task-form label {
-        font-weight: 600;
-        margin-bottom: 5px;
-        display: block;
-    }
+.home-container label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
 
     /* Inputs */
-    .task-form input,
-    .task-form select,
-    .task-form textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        margin-bottom: 15px;
-        transition: 0.3s;
-    }
+.home-container input,
+.home-container select,
+.home-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
 
-        .task-form input:focus,
-        .task-form select:focus,
-        .task-form textarea:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 6px rgba(0,123,255,0.3);
-            outline: none;
-        }
+    .home-container input:focus,
+    .home-container select:focus,
+    .home-container textarea:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 6px rgba(0,123,255,0.3);
+        outline: none;
+    }
 
 /* Buttons */
 .btn-create {
@@ -108,8 +199,44 @@
     padding: 10px 20px;
     border-radius: 6px;
     transition: 0.3s;
+    margin:12px 5px 0 0;
 }
 
     .btn-delete:hover {
         background: #c82333;
     }
+
+/* Container styling */
+.content-container {
+    background-color: #ecf0f1; /* light gray */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin: 30px auto;
+    max-width: 80%;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1e1e2f;
+    color: #f1f1f1;
+}
+
+    body.dark-mode .home-container {
+        background-color: #2c2c3e;
+        box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Dark mode navbar */
+    body.dark-mode .navbar {
+        background-color: #111827;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    }
+
+        body.dark-mode .navbar .nav-link {
+            color: #e5e7eb !important;
+        }
+
+            body.dark-mode .navbar .nav-link:hover {
+                color: #10b981 !important; /* green hover */
+            }
