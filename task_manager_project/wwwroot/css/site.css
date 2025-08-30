@@ -1,31 +1,115 @@
-html {
-  font-size: 14px;
+/* Center the form nicely */
+/* General container */
+.task-container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    /* Form labels */
+    .task-container label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        display: block;
+        color: #333;
+    }
+
+    /* Form inputs */
+    .task-container input[type="text"],
+    .task-container input[type="date"],
+    .task-container select,
+    .task-container textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        margin-bottom: 15px;
+        transition: 0.3s;
+    }
+
+        .task-container input:focus,
+        .task-container select:focus,
+        .task-container textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+            outline: none;
+        }
+
+.task-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    /* Labels */
+    .task-form label {
+        font-weight: 600;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    /* Inputs */
+    .task-form input,
+    .task-form select,
+    .task-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        transition: 0.3s;
+    }
+
+        .task-form input:focus,
+        .task-form select:focus,
+        .task-form textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0,123,255,0.3);
+            outline: none;
+        }
+
+/* Buttons */
+.btn-create {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+    .btn-create:hover {
+        background: #218838;
+    }
+
+.btn-edit {
+    background: #ffc107;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
-body {
-  margin-bottom: 60px;
+    .btn-edit:hover {
+        background: #e0a800;
+    }
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
-}
-
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
-}
+    .btn-delete:hover {
+        background: #c82333;
+    }
